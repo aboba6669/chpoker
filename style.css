@@ -1,52 +1,128 @@
+ /* Сброс стилей по умолчанию */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Основной фон и настройка контейнера */
 html, body {
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f4f4f4; /* Добавлен светлый фон */
 }
+
 #d1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: yellow;
-    padding: 15px; 
+    padding: 20px;
     border-radius: 15px;
+    gap: 15px; /* Равномерные отступы между элементами */
+    width: 100%;
+    max-width: 400px; /* Максимальная ширина для крупных экранов */
 }
-button {
+
+/* Стили для кнопок и ввода */
+input, button {
     background-color: white;
-    padding: 4px 8px;
-    border-radius: 15px;
+    padding: 10px;
+    border-radius: 10px;
     border: 3px solid black;
     font-weight: 700;
+    width: 100%; /* Ширина 100% для адаптации */
+    max-width: 350px; /* Максимальная ширина для кнопок и поля ввода */
 }
+
 input {
-    background-color: white;
-    padding: 4px 8px;
-    border-radius: 15px;
-    border: 3px solid black;
-    font-weight: 700;
+    padding: 10px 20px; /* Увеличенные отступы для поля ввода */
 }
+
+button {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f0f0f0; /* Лёгкое изменение фона при наведении */
+}
+
 #b2 {
-    margin-top: 20px;
+    margin-top: 10px;
 }
+
 h1 {
     margin-bottom: 15px;
+    font-size: 24px;
 }
-#d3{
+
+/* Стиль контейнера для списка задач */
+#d3 {
     width: 100%;
     border: 3px solid black;
     border-radius: 15px;
     min-height: 100px;
-    margin-top: 15px;
-    padding: 5px 24px;
+    max-height: 300px; /* Максимальная высота для прокрутки */
+    overflow-y: auto; /* Прокрутка, если задач много */
+    padding: 10px;
     box-sizing: border-box;
 }
-.li1 {
-    font-weight: 700;
+
+/* Стили для списка и задач */
+ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd; /* Разделение задач */
+}
+
+li:hover {
+    background-color: #f9f9f9; /* Лёгкое выделение при наведении */
+}
+
+.check-btn, .delete-btn {
+    background-color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.check-btn:hover {
+    color: green;
+}
+
+.delete-btn:hover {
+    color: red;
+}
+
+/* Стили для завершённых задач */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 600px) {
+    #d1 {
+        padding: 15px;
+    }
+
+    input, button {
+        max-width: 100%; /* На мобильных устройствах ширина полей ввода и кнопок будет занимать 100% */
+    }
+
+    #d3 {
+        padding: 5px;
+    }
 }
